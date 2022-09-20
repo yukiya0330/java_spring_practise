@@ -6,6 +6,14 @@ import entity.Member;
 
 public class MemberServiceImpl implements MemberService {
 
+	private static MemberServiceImpl singlton = new MemberServiceImpl();
+
+	private MemberServiceImpl() {};
+
+	public static MemberServiceImpl getInstance() {
+		return singlton;
+	}
+
 	@Override
 	public String greet(int i) {
 		String[] greetings = {"Good Morning", "Hello", "Good evening"};
